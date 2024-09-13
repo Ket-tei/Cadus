@@ -1,0 +1,56 @@
+/* reset and importation preset */
+@import url('css/reset.css');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+/* default value of the website */
+body {
+  /* variable Color */
+  --primary: #F0F0F0;
+  --secondary: #1c2866;
+  --extra: #991ee1;
+  --white: #F0F0F0;
+  --black: #000;
+  /* -------- */
+
+  margin: 0;
+  padding: 0;
+  background-color: var(--secondary);
+  color: var(--secondary);
+  font-family: 'Lato','monospace';
+  width: 100vw;
+  height: 100vh;
+  font-size: 2.8vh;
+}
+h2 {
+  font-family: 'Quicksand','sans-serif';
+}
+::selection {
+  background: var(extra);
+}
+::-moz-selection {
+  background: var(--extra);
+}
+/* ------------------------------------------ */
+
+/* Main Menu */
+#header {
+  width: 100vw;
+  height: 10vh;
+  background-color: red;
+
+  .menu {
+    display: block;
+    margin: 1em auto 1em auto;
+    background-color: red;
+    width: 90%;
+    height: 10%;
+
+    ul {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: red;
+    }
+  }
+}
