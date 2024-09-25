@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="contact.css" />
+    <title>Cadus</title>
+  </head>
+  <body>
+    <header>
+      <div class="menu">
+        <ul>
+          <li>
+            <a href=""><img src="" alt="logo du site" /></a>
+          </li>
+          <li>
+            <a href=""><h2>Acceuil</h2></a>
+          </li>
+          <li>
+            <a href=""><h2>Qui somme nous ?</h2></a>
+          </li>
+          <li>
+            <a href=""><h2>Bouton1</h2></a>
+          </li>
+          <li>
+            <a href=""><h2>Bouton1</h2></a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <section class="Contact">
+        <h1>Contact</h1>
+        <p>Pour nous contacter, adressez-nous un message. Nous vous fixerons un RDV téléphonique. Merci</p>
+      <section class="contact-dynamique">
+        <h1>Contact</h1>
+        <form action="contact.php" method="post">
+          <label for="nom">Nom</label>
+          <input type="text" name="nom" id="nom" required />
+          <label for="prenom">Prénom</label>
+          <input type="text" name="prenom" id="prenom" required />
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" required />
+          <label for="message">Message</label>
+          <textarea name="message" id="message" required></textarea>
+          <input type="submit" value="Envoyer" />
+        </form>
+      </section>
+  </body>
+</html>
