@@ -1,7 +1,7 @@
 .contact {
   margin: 20px;
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: #f0f0f0;
 }
 
 .contact h1 {
@@ -19,12 +19,42 @@
   display: flex;
   justify-content: center;
 }
-
+.boutonContacter {
+  justify-content: center;
+  margin-top: 20px;
+  display: flex;
+}
+.boutonContacter .bouton {
+  background-color: #007bff;
+  display: flex;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.4em;
+  color: white;
+  justify-content: center;
+}
+.arriere-plan {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
 .contact-dynamique {
-  margin-top: 30px;
-  padding: 15px;
-  background-color: #e9ecef;
-  border-radius: 8px;
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  z-index: 1000;
+  transition: all 0.3s ease;
 }
 
 .contact-dynamique h2 {
@@ -48,7 +78,7 @@
 .contact-dynamique textarea {
   margin-bottom: 15px;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 0.1px solid;
   border-radius: 5px;
   font-size: 1em;
 }
