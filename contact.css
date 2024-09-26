@@ -1,0 +1,67 @@
+.contact {
+  margin: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.contact h1 {
+  color: black;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.contact p {
+  color: #555;
+  font-size: 1em;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-dynamique {
+  margin-top: 30px;
+  padding: 15px;
+  background-color: #e9ecef;
+  border-radius: 8px;
+}
+
+.contact-dynamique h2 {
+  color: black;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.contact-dynamique form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-dynamique label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: black;
+}
+
+.contact-dynamique input,
+.contact-dynamique textarea {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.contact-dynamique input[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+.contact-dynamique input[type="submit"]:hover {
+  background-color: #0056b3;
+}
