@@ -23,8 +23,14 @@ body {
   font-size: 2.8vh;
   overflow-x: hidden;
 }
+h1 {
+  padding: 0;
+  margin: 0;
+}
 h2 {
   font-family: 'Kanit','sans-serif';
+  padding: 0;
+  margin: 0;
 }
 a {
   text-decoration: none;

@@ -3,7 +3,7 @@
 
 /* Main Menu */
 header {
-  height: 8vh;
+  height: 11vh;
 
   nav {
     display: flex;
@@ -20,6 +20,7 @@ header {
       padding: 0 2em 0 0;
     }
 
+    /* logo */
     img {
       display: flex;
       width: 2em;
@@ -34,10 +35,12 @@ header {
         font-weight: 400;
         transition: transform 200ms ease-in-out;
 
+        /* animation qui souleve le texte survole */
         &:hover {
           transform: translateY(-0.2em);
         }
 
+        /* creation de la barre en dessous du texte */
         &::after {
           display: block;
           content: '';
@@ -47,11 +50,14 @@ header {
           transform-origin: 0% 50%;
           transition: transform 200ms ease-out;
         }
+
+        /* affichage de la barre en dessous du texte */
         &:hover::after {
           transform: scaleX(1);
         }
       }
 
+      /* definition de la barre permanente de la page actuel */
       #actual-page {
         &::after {
           display: block;
@@ -92,32 +98,107 @@ header {
           font-size: 500;
           transition: all 200ms ease-in-out;
 
+          /* creation de la barre de remplissage */
           &::after {
             content: '';
             display: block;
             border-bottom: solid 0.1em var(--secondary);
             border-radius: 10em;
-            transform: scaleX(0) translateY(-850%) translateX(-30%);
-            transform-origin: 0% 50%;
+            transform: scaleX(0) translateY(-855%) translateX(-530%);
             transition: transform 200ms ease-out;
           }
         }
 
         &:hover {
+          /* deplacement de l'icone */
           img {
             transform: translateX(450%);
           }
-
+          /* disparition du texte */
           p {
             transform: translateX(100%);
             color: #527FB400;
-
+            /* affichage de la barre de remplissage */
             &::after {
               transform: scaleX(1) translateY(-850%) translateX(-130%);
             }
           }
         }
       }
+    }
+  }
+}
+
+
+/* phrase d'accroche et ecran principale */
+#landing-page {
+  width: inherit;
+  height: 59vh; /* 100vh - 11vh (menu) - 30vh (15+15 du padding de la landing-page) */
+  padding: 15vh 0;
+
+
+  .sentence {
+    width: 25%;
+    text-align: center;
+    justify-content: center;
+    background-color: var(--secondary);
+    padding: 2em;
+    margin: auto;
+    border-radius: 1.2em;
+
+    h1 {
+      font-family: 'Nunito Sans','monospace';
+      font-weight: 500;
+      font-size: 1.3em;
+      justify-content: center;
+    }
+    span {
+      font-family: 'Kanit','sans-serif';
+      font-weight: 700;
+      font-size: 1.4em;
+      color: var(--extra);
+    }
+  }
+  .arrow {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20vh;
+    margin: auto;
+    align-items: center;
+    
+    p {
+      font-family: 'Kanit','sans-serif';
+      font-weight: 300;
+      font-size: 1.5em;
+      color: var(--black);
+    }
+
+    #arrow-top {
+      display: block;
+      width: 3em;
+      border-bottom: solid 0.11em var(--black);
+      transform: rotate(90deg);
+    }
+    #arrow-bottom {
+      margin-top: 1em;
+      display: block;
+      width: 4em;
+      border-bottom: solid 0.11em var(--black);
+      transform: rotate(90deg);
+    }
+    #arrow-right {
+      display: block;
+      width: 0.6em;
+      margin: 1.95em;
+      border-bottom: solid 0.11em var(--black);
+      transform: rotate(-45deg) translateX(50%);
+    }
+    #arrow-left {
+      display: block;
+      width: 0.6em;
+      margin: -2em;
+      border-bottom: solid 0.11em var(--black);
+      transform: rotate(45deg) translateX(-50%);
     }
   }
 }
