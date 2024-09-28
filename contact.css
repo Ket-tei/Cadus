@@ -1,5 +1,7 @@
+@import url("css/base.css");
+
 .contact {
-  margin: 20px;
+  margin: 30px;
   padding: 20px;
   background-color: #f0f0f0;
 }
@@ -13,25 +15,74 @@
 }
 
 .contact p {
-  color: #555;
+  color: black;
   font-size: 1em;
   line-height: 1.6;
   display: flex;
   justify-content: center;
 }
+.info {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  gap: 100px;
+}
+
+.info map {
+  width: 100%;
+  height: 300px;
+}
+.info .adresse {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+  color: black;
+}
+.info .adresse i {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.info .mail {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+  margin-right: 80px;
+}
+.info .mail i {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+.info .mail a {
+  color: black;
+}
+.info .mail a:hover {
+  text-decoration: underline;
+}
+
 .boutonContacter {
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 90px;
   display: flex;
 }
 .boutonContacter .bouton {
-  background-color: #007bff;
+  background-color: var(--secondary);
   display: flex;
   border: none;
   border-radius: 5px;
   font-size: 1.4em;
   color: white;
   justify-content: center;
+  padding: 10px 20px;
+}
+.boutonContacter .bouton:hover {
+  background-color: #0069d9;
 }
 .arriere-plan {
   position: fixed;
@@ -84,7 +135,7 @@
 }
 
 .contact-dynamique input[type="submit"] {
-  background-color: #007bff;
+  background-color: var(--secondary);
   color: white;
   cursor: pointer;
   padding: 10px 20px;
@@ -93,5 +144,5 @@
 }
 
 .contact-dynamique input[type="submit"]:hover {
-  background-color: #0056b3;
+  background-color: #0069d9;
 }
