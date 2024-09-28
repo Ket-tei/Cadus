@@ -98,15 +98,15 @@ header {
             font-size: 500;
             transition: all 200ms ease-in-out;
   
-            /* creation de la barre de remplissage */
-            /* &::after {
-              content: '';
+            /* creation du nouveau contact */
+            &::after {
+              content: 'Contacter';
               display: block;
-              border-bottom: solid 0.1em var(--secondary);
-              border-radius: 10em;
-              transform: scaleX(0) translateY(-855%) translateX(-530%);
-              transition: transform 200ms ease-out;
-            } */
+              position: absolute;
+              color: #527FB400;
+              transform: scaleX(1) translateY(-100%) translateX(-150%);
+              transition: all 200ms ease-in-out;
+            }
           }
   
           &:hover {
@@ -118,9 +118,10 @@ header {
             p {
               transform: translateX(100%);
               color: #527FB400;
-              /* affichage de la barre de remplissage */
+              /* affichage et deplacement du nouveau contact */
               &::after {
-                transform: scaleX(1) translateY(-850%) translateX(-130%);
+                color: var(--secondary);
+                transform: scaleX(1) translateY(-100%) translateX(-130%);
               }
             }
           }
