@@ -1,134 +1,6 @@
 /* base importation */
 @import url('css/base.css');
 
-/* Main Menu */
-header {
-  height: 11vh;
-
-  nav {
-    display: flex;
-    background-color: var(--secondary);
-    align-items: center;
-    text-align: center;
-    justify-content: space-between;
-
-    ul {
-      display: flex;
-      list-style: none;
-      align-items: center;
-      text-align: center;
-      padding: 0 2em 0 0;
-    }
-
-    /* logo */
-    img {
-      display: flex;
-      width: 2em;
-      height: 2em;
-      margin: 0 1em;
-    }
-
-    .menu {
-      li {
-        margin: 0 1em;
-        color: var(--primary);
-        font-weight: 400;
-        transition: transform 200ms ease-in-out;
-
-        /* animation qui souleve le texte survole */
-        &:hover {
-          transform: translateY(-0.2em);
-        }
-
-        /* creation de la barre en dessous du texte */
-        &::after {
-          display: block;
-          content: '';
-          border-bottom: solid 0.15em var(--white);
-          border-radius: 10em;
-          transform: scaleX(0);
-          transform-origin: 0% 50%;
-          transition: transform 200ms ease-out;
-        }
-
-        /* affichage de la barre en dessous du texte */
-        &:hover::after {
-          transform: scaleX(1);
-        }
-      }
-
-      /* definition de la barre permanente de la page actuel */
-      #actual-page {
-        &::after {
-          display: block;
-          content: '';
-          border-bottom: solid 0.3em var(--white);
-          border-radius: 10em;
-          transform: scaleX(1);
-          transform-origin: 0% 50%;
-        }
-      }
-    }
-
-    .contact-button {
-      li {
-        display: flex;
-        height: 1.4em;
-        padding: 0.2em 1em 0.2em 0.3em;
-        background-color: var(--white);
-        border-radius: 10em;
-        text-align: center;
-        align-items: center;
-
-        a {
-          display: flex;
-          align-items: center;
-          text-align: center;
-        }
-
-        img {
-          width: 1.2em;
-          height: 1.2em;
-          margin: 0 0.5em 0 0;
-          transition: transform 200ms ease-in-out;
-        }
-
-        p {
-          color: var(--secondary);
-          font-size: 500;
-          transition: all 200ms ease-in-out;
-
-          /* creation de la barre de remplissage */
-          &::after {
-            content: '';
-            display: block;
-            border-bottom: solid 0.1em var(--secondary);
-            border-radius: 10em;
-            transform: scaleX(0) translateY(-855%) translateX(-530%);
-            transition: transform 200ms ease-out;
-          }
-        }
-
-        &:hover {
-          /* deplacement de l'icone */
-          img {
-            transform: translateX(450%);
-          }
-          /* disparition du texte */
-          p {
-            transform: translateX(100%);
-            color: #527FB400;
-            /* affichage de la barre de remplissage */
-            &::after {
-              transform: scaleX(1) translateY(-850%) translateX(-130%);
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
 
 /* phrase d'accroche et ecran principale */
 #landing-page {
@@ -191,14 +63,157 @@ header {
       width: 0.6em;
       margin: 1.95em;
       border-bottom: solid 0.11em var(--black);
-      transform: rotate(-45deg) translateX(50%);
+      transform: rotate(-45deg) translateX(45%);
     }
     #arrow-left {
       display: block;
       width: 0.6em;
-      margin: -2em;
+      margin: -2.02em;
       border-bottom: solid 0.11em var(--black);
-      transform: rotate(45deg) translateX(-50%);
+      transform: rotate(45deg) translateX(-45%);
+    }
+  }
+}
+
+/* Bento */
+#bento {
+  padding-top: 5em;
+  width: inherit;
+  height: 100vh;
+  background-color: var(--white);
+
+  #bento-wrapper {
+    display: grid;
+    width: 60%;
+    height: 80%;
+    margin: auto;
+    justify-content: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 1.5em;
+
+    .bento {
+      background-color: var(--secondary);
+      border-radius: 1em;
+    }
+
+    .b1 {
+      grid-column: 1;
+      grid-row: 1 / 3;
+    }
+    .b2 {
+      grid-column: 4;
+      grid-row: 1;
+    }
+
+    .b3 {
+      grid-column: 2 / 5;
+      grid-row: 2;
+    }
+
+    .b4 {
+      grid-column: 1 / 3;
+      grid-row: 3;
+    }
+
+    .b5 {
+      grid-column: 3 / 5;
+      grid-row: 3;
+    }
+  }
+}
+
+
+/* Plan du site + mentions legales */
+footer {
+  position: absolute;
+  bottom: -130vh;
+  left: 0;
+  max-height: 0%;
+  overflow-y: hidden;
+  transition: all 500ms ease;
+
+  .footer-wrapper {
+    display: flex;
+    width: inherit;
+    height: auto;
+    padding: 1em;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--secondary);
+    color: var(--black);
+    font-family: 'Kanit','sans-serif';
+    font-weight: 300;
+    font-size: 0.4em;
+    transition: all 300ms ease;
+    
+
+    .footer-mentions {
+      align-items: center;
+      display: flex;
+      width: 50%;
+
+      .logo {
+        margin: auto 2em;
+        img {
+          width: 5em;
+          height: 5em;
+        }
+      }
+
+      .text {
+        width: 80%;
+        margin: auto 2em;
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        height: 10em;
+        width: 0.11em;
+        border-right: solid 0.11em var(--black);
+      }
+    }
+  }
+  &.show {
+    bottom: -122vh;
+    max-height: fit-content;
+  }
+}
+
+
+/* Button qui controle le panel de mentions legale  */
+.mentions-button {
+  position: relative;
+  height: 5vh;
+  width: 100%;
+  margin-top: 3vh;
+
+  #show-button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    width: fit-content;
+    margin: 0 auto;
+
+    background-color: var(--secondary);
+    font-family: 'Kanit','sans-serif';
+    font-weight: 300;
+    font-size: 0.5em;
+    cursor: pointer;
+    border-style: none;
+    border-radius: 1em 1em 0 0;
+    color: var(--white);
+
+    transition: all 400ms ease-in-out;
+
+    &:hover {
+      height: 100%;
+    }
+    &.show {
+      bottom: 420%;
     }
   }
 }
