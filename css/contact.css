@@ -40,7 +40,7 @@
   .mail {
     text-align: center;
     color: black;
-    padding-right: 1.6em;
+    padding-right: 1.9em;
 
     i {
       font-size: 3em;
@@ -71,7 +71,8 @@
     justify-content: center;
     border-radius: 0.6em;
     padding: 0.3em 0.8em;
-
+    border: none;
+    cursor: pointer;
     &:hover {
       background-color: #0069d9;
     }
