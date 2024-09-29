@@ -1,4 +1,6 @@
+/* base importation */
 @import url("base.css");
+
 /* Introduction */
 .contact {
   margin: 1em;
@@ -56,7 +58,6 @@
 }
 
 /*bouton contact */
-
 .boutonContacter {
   justify-content: center;
   display: flex;
@@ -78,7 +79,6 @@
 }
 
 /*arrière plan */
-
 .arriere-plan {
   position: fixed;
   top: 0;
@@ -90,7 +90,6 @@
 }
 
 /*formulaire de contact */
-
 .contact-dynamique {
   display: none;
   position: fixed;
