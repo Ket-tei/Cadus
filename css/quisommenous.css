@@ -2,20 +2,37 @@
 
 .quisommenous {
   font-family: "Nunito Sans", "monospace";
-  margin: 30px;
-  padding: 20px;
+  margin: 2em;
+  padding: 1em;
   background-color: #f0f0f0;
-}
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 
-.quisommenous h1 {
-  color: black;
-  font-size: 2.5em;
-  margin-bottom: 15px;
-}
+  h1 {
+    color: black;
+    font-size: 2.5em;
+    margin-bottom: 1.5em;
+    text-align: center;
+  }
 
-.quisommenous p {
-  color: black;
-  font-size: 1em;
-  line-height: 2;
-  text-align: justify;
+  button {
+    background-color: var(--secondary);
+    font-size: 1em;
+    color: white;
+    justify-content: center;
+    border-radius: 0.6em;
+    padding: 0.3em 0.8em;
+    border: none;
+    cursor: pointer;
+    &:hover {
+      background-color: #0069d9;
+    }
+  }
+
+  p {
+    color: black;
+    font-size: 1em;
+    line-height: 2;
+    text-align: justify;
+  }
 }
