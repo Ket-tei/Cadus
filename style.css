@@ -3,12 +3,17 @@
 
 /* phrase d'accroche et ecran principale */
 #landing-page {
+  position: relative;
   width: inherit;
   height: 59vh; /* 100vh - 11vh (menu) - 30vh (15+15 du padding de la landing-page) */
   padding: 15vh 0;
 
   .sentence {
-    width: 25%;
+    position: absolute;
+    width: 23.5%;
+    height: 14%;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
     justify-content: center;
     background-color: var(--secondary);
@@ -16,7 +21,6 @@
     margin: auto;
     border-radius: 1.2em;
     z-index: 10;
-    position: relative;
 
     h1 {
       font-family: "Nunito Sans", "monospace";
@@ -32,13 +36,12 @@
     }
   }
   .arrow {
+    position: relative;
     display: flex;
     flex-direction: column;
-    padding-top: 20vh;
+    padding-top: 40vh;
     margin: auto;
     align-items: center;
-    z-index: 1;
-    position: relative;
 
     p {
       font-family: "Kanit", "sans-serif";

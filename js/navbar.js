@@ -12,8 +12,7 @@ function injectNavbar() {
     // Définit l'id de la page actuelle
     let id1 = "", id2 = "", id3 = "", id4 = "";
     switch (actualPath) {
-        case "index":
-            id1 = id;
+        case "contact":
             break;
         case "quisommenous":
             id2 = id;
@@ -25,6 +24,7 @@ function injectNavbar() {
             id4 = id;
             break;
         default:
+            id1 = id;
             break;
     }
 

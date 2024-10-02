@@ -3,9 +3,9 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.to(".sentence", {
   scrollTrigger: {
     trigger: ".sentence",
-    start: "-59px 50%",
-    end: "+=880",
+    start: "top 26%",
+    end: "+=88%",
     pin: true,
-    scrub: true,
+    scrub: 1,
   },
 });
