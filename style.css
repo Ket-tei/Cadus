@@ -88,6 +88,7 @@
   background-color: var(--white);
 
   #bento-wrapper {
+    position: relative;
     display: grid;
     width: 60%;
     height: 80%;
@@ -105,10 +106,11 @@
       div {
         height: 100%;
         margin: 0em 1em;
-        margin-top: 2em;
+        margin-top: 1em;
 
         p {
-          line-height: 1em;
+          line-height: 2em;
+          font-size: 0.9em;
   
           span {
             font-weight: 500;
@@ -145,7 +147,7 @@
       
           p {
             color: var(--secondary);
-            font-size: 600;
+            font-weight: 600;
             font-size: 0.8em;
             transition: all 200ms ease-in-out;
       
@@ -203,6 +205,24 @@
     .b5 {
       grid-column: 3 / 5;
       grid-row: 3;
+    }
+    .b2 {
+
+      & .design-elmt {
+        position: absolute;
+      }
+      & img:first-of-type {
+        height: auto;
+        width: 20%;
+        top: 2.2em;
+        right: 0;
+      }
+      & img:last-of-type {
+        height: 10%;
+        width: 10%;
+        top: 3.5em;
+        right: 0.6em;
+      }
     }
   }
 }

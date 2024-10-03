@@ -32,7 +32,7 @@ function injectNavbar() {
     <header>
         <nav>
             <ul class="menu">
-                <a href="./index.html"><img src="./ressources/Logo_Cadus.png" alt="logo du site" /></a>
+                <a href="./index.html"><img src="./assets/Logo_Cadus.png" alt="logo du site" /></a>
                 <li ${id1}>
                     <a href="./index.html">Acceuil</a>
                 </li>
@@ -49,7 +49,7 @@ function injectNavbar() {
             <ul class="contact-button">
                 <li>
                     <a href="./contact.html">
-                        <img src="./ressources/arrow-circle.png" alt="arrow image">
+                        <img src="./assets/arrow-circle.png" alt="arrow image">
                         <p>Contacter</p>
                     </a>
                 </li>
