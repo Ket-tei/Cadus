@@ -102,6 +102,7 @@
       background-color: var(--secondary);
       border-radius: 1em;
       height: 100%;
+      overflow: hidden;
 
       div {
         height: 100%;
@@ -110,7 +111,7 @@
 
         p {
           line-height: 2em;
-          font-size: 0.9em;
+          font-size: 90%;
 
           span {
             font-weight: 500;
