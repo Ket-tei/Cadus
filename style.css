@@ -106,12 +106,12 @@
 
       div {
         height: 100%;
-        margin: 0em 1em;
+        margin: 0em 0em 0em 1em;
         margin-top: 1em;
 
         p {
           line-height: 2em;
-          font-size: 90%;
+          font-size: 0.9em;
 
           span {
             font-weight: 500;
@@ -123,7 +123,7 @@
 
       .contact-button-bento {
         padding: 0;
-        margin: 1em auto 0 auto;
+        margin: 1em auto auto auto;
         width: fit-content;
 
         li {
