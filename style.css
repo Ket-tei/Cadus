@@ -4,25 +4,33 @@
 /* phrase d'accroche et ecran principale */
 #landing-page {
   position: relative;
-  width: inherit;
+  width: 60%;
   height: 59vh; /* 100vh - 11vh (menu) - 30vh (15+15 du padding de la landing-page) */
   padding: 15vh 0;
+  margin: auto;
+  justify-content: center;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 1.5em;
 
   .sentence {
     position: absolute;
-    width: 23.5%;
-    height: 14%;
-    left: 50%;
-    transform: translateX(-50%);
+    z-index: 1;
+    height: 32.5%;
+    width: 100%;
     text-align: center;
-    background-color: var(--secondary);
-    padding: 2em;
-    margin: auto;
     border-radius: 1.2em;
     line-height: 1.5em;
-    z-index: 1;
+    background-color: var(--secondary);
+
+    grid-column: 2 / 4;
+    grid-row: 1;
 
     h1 {
+      margin: 1em;
+      margin-top: 12.5%;
       font-family: "Nunito Sans", "monospace";
       font-weight: 500;
       font-size: 1.3em;
@@ -36,14 +44,18 @@
     }
   }
   .arrow {
-    position: relative;
+    position: absolute;
     display: flex;
     flex-direction: column;
-    padding-top: 40vh;
+    padding-top: 60vh;
+    left: 50%;
+    transform: translateX(-50%);
     margin: auto;
     align-items: center;
+    justify-content: center;
 
     p {
+      text-wrap: nowrap;
       font-family: "Kanit", "sans-serif";
       font-weight: 300;
       font-size: 1.5em;
@@ -332,10 +344,14 @@ footer {
 
 
 /* Block the reducing of .sentence */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1024px) {
   #landing-page {
-    .sentence {
-      width: 40%;
+    width: 90%;
+  }
+
+  #bento {
+    #bento-wrapper {
+      width: 90%;
     }
   }
 }
