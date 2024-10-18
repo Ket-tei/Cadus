@@ -15,11 +15,11 @@
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
-    justify-content: center;
     background-color: var(--secondary);
     padding: 2em;
     margin: auto;
     border-radius: 1.2em;
+    line-height: 1.5em;
     z-index: 1;
 
     h1 {
@@ -326,6 +326,16 @@ footer {
     }
     &.show {
       bottom: 420%;
+    }
+  }
+}
+
+
+/* Block the reducing of .sentence */
+@media screen and (max-width: 900px) {
+  #landing-page {
+    .sentence {
+      width: 40%;
     }
   }
 }
