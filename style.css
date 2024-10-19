@@ -219,6 +219,45 @@
     .b3 {
       grid-column: 2 / 5;
       grid-row: 2;
+
+      div {
+        position: relative;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        
+        img {
+          width: 10%;
+          position: absolute;
+          
+        }
+        /* correctif top % car svg faux carre :  5.5% */
+        /* correctif left % car svg faux carre :  -1.4% */
+        
+        img:nth-child(1) {
+          filter: brightness(0) saturate(100%) invert(77%) sepia(62%) saturate(392%) hue-rotate(64deg) brightness(104%) contrast(94%);
+          top: 30.9%; 
+          left: -1.4%;
+        }
+        img:nth-child(2) {
+          filter: brightness(0) saturate(100%) invert(93%) sepia(0%) saturate(7343%) hue-rotate(10deg) brightness(109%) contrast(94%);
+          transform: rotate(90deg);
+          top: 0;
+          left: 0;
+        }
+        img:nth-child(3) {
+          filter: brightness(0) saturate(100%) invert(77%) sepia(62%) saturate(392%) hue-rotate(64deg) brightness(104%) contrast(94%);
+          transform: rotate(180deg);
+          top: 5.5%; /*0% + 5.5%*/
+          left: 8.5%;
+        }
+        img:nth-child(4) {
+          filter: brightness(0) saturate(100%) invert(93%) sepia(0%) saturate(7343%) hue-rotate(10deg) brightness(109%) contrast(94%);
+          transform: rotate(270deg);
+          top: 36%; /*30.9 + 5.5%*/
+          left: 7.1%; /*8.5% - 1.4%*/
+        }
+      }  
     }
 
     .b4 {
