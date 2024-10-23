@@ -198,20 +198,6 @@
     .b1 {
       grid-column: 1;
       grid-row: 1 / 3;
-      font-family: "Kanit", "sans-serif";
-
-      .link {
-        a {
-          color: var(--white);
-          text-decoration: underline;
-          font-size: 0.8em;
-          text-decoration: list-item;
-          text-align: left;
-          &:hover {
-            color: var(--extra);
-          }
-        }
-      }
     }
     .b2 {
       z-index: 2;
@@ -259,10 +245,10 @@
           transition: all 0.5s ease-in-out;
         }
         img:nth-child(even) {
-          filter: brightness(0) saturate(100%) invert(77%) sepia(62%) saturate(392%) hue-rotate(64deg) brightness(104%) contrast(94%);
+          filter: brightness(0) saturate(100%) invert(76%) sepia(56%) saturate(814%) hue-rotate(23deg) brightness(100%) contrast(101%);
         }
         img:nth-child(odd) {
-          filter: brightness(0) saturate(100%) invert(93%) sepia(0%) saturate(7343%) hue-rotate(10deg) brightness(109%) contrast(94%);
+          filter: brightness(0) saturate(100%) invert(100%) sepia(92%) saturate(57%) hue-rotate(209deg) brightness(114%) contrast(88%);
         }
         img:nth-child(1) {
           grid-column: 1;
@@ -302,7 +288,6 @@
           transform: rotate(0deg) translateY(-45%);
         }
       }
-      }
     }
 
     .b4 {
@@ -313,6 +298,20 @@
     .b5 {
       grid-column: 3 / 5;
       grid-row: 3;
+      font-family: "Kanit", "sans-serif";
+
+      .link {
+        a {
+          color: var(--white);
+          text-decoration: underline;
+          font-size: 0.8em;
+          text-decoration: list-item;
+          text-align: left;
+          &:hover {
+            color: var(--extra);
+          }
+        }
+      }
     }
     .b2 {
       & .design-elmt {
@@ -426,7 +425,7 @@ footer {
   }
 }
 
-/* Block the reducing of .sentence */
+/* Tablet adaptation */
 @media screen and (max-width: 1024px) {
   #landing-page {
     width: 90%;
@@ -435,6 +434,14 @@ footer {
   #bento {
     #bento-wrapper {
       width: 90%;
+
+      .b3 {
+
+        p {
+          width: 60%;
+          margin: 0 10% 0 30%;
+        }
+      }
     }
   }
 }
