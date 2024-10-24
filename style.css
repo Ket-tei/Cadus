@@ -195,9 +195,83 @@
       }
     }
 
+    /* faut faire la pluie de coeur */
     .b1 {
       grid-column: 1;
       grid-row: 1 / 3;
+      display: flex;
+
+      div {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 12% 0 0 0;
+        text-align: center;
+        text-align: center;
+        font-family: 'Kanit', 'sans-serif';
+
+        p {
+          font-size: 3em;
+          margin: 0;
+          transition: all 0.11s ease-in-out;
+        }
+  
+        strokeText {
+          color: #ffffff00;
+          -webkit-text-stroke: 1px #ffffff00;
+          line-height: 1em;
+          transition: all 0.2s ease-in-out;
+
+          &.st1 {
+            font-size: 2.55em;
+            transform: translateY(250%);
+          }
+          &.st2 {
+            font-size: 2.75em;
+            transform: translateY(150%);
+          }
+          &.st3 {
+            font-size: 2.75em;
+            transform: translateY(-150%);
+          }
+          &.st4 {
+            font-size: 2.55em;
+            transform: translateY(-250%);
+          }
+        }
+      }
+      div:hover {
+        strokeText {
+
+          &.st1 {
+            transform: translateY(110%);
+            -webkit-text-stroke: 1px var(--white);
+          }
+          &.st2 {
+            transform: translateY(80%);
+            -webkit-text-stroke: 1px var(--white);
+          }
+          &.st3 {
+            transform: translateY(-80%);
+            -webkit-text-stroke: 1px var(--white);
+          }
+          &.st4 {
+            transform: translateY(-110%);
+            -webkit-text-stroke: 1px var(--white);
+          }
+        }
+        strokeText:hover {
+          cursor: pointer;
+          color: var(--extra);
+          -webkit-text-stroke: 1px var(--extra);
+        }
+        p:hover {
+          cursor: pointer;
+          color: var(--extra);
+        }
+      }
     }
     .b2 {
       z-index: 2;
