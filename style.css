@@ -313,6 +313,8 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
+        /* Translation du au plugin scrollTrigger et du conflit avec les elements en pos absolute */
+        transform: translate(-130%, -25%);
         
         img {
           width: 7.8vh;
@@ -389,15 +391,18 @@
     }
     .b2 {
       & .design-elmt {
+        /* Translation du au plugin scrollTrigger et du conflit avec les */
         position: absolute;
       }
       & img:first-of-type {
+        transform: translate(-200%, 100%) scale(350%);
         height: auto;
         width: 20%;
         top: 2.2em;
         right: 0;
       }
       & img:last-of-type {
+        transform: translate(-200%, 100%) scale(350%);
         height: 10%;
         width: 10%;
         top: 3.5em;
