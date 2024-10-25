@@ -216,6 +216,7 @@
           font-size: 3em;
           margin: 0;
           transition: all 0.11s ease-in-out;
+          white-space: nowrap;
         }
   
         strokeText {
@@ -391,10 +392,10 @@
     }
     .b2 {
       & .design-elmt {
-        /* Translation du au plugin scrollTrigger et du conflit avec les */
         position: absolute;
       }
       & img:first-of-type {
+        /* Translation du au plugin scrollTrigger et du conflit avec les pos absolute*/
         transform: translate(-200%, 100%) scale(350%);
         height: auto;
         width: 20%;
@@ -402,6 +403,7 @@
         right: 0;
       }
       & img:last-of-type {
+        /* Translation du au plugin scrollTrigger et du conflit avec les pos absolute*/
         transform: translate(-200%, 100%) scale(350%);
         height: 10%;
         width: 10%;
