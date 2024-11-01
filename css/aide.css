@@ -72,10 +72,11 @@
   input[type="number"] {
     margin-bottom: 1em;
     padding: 0.5em;
+    padding-right: 0.5em;
     border-radius: 0.1em;
     border: 1px solid black;
     font-size: 1em;
-    width: 100%;
+    width: 97%;
   }
 
   button {
