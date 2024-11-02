@@ -32,24 +32,24 @@ function injectDesktopNavbar() {
     <header>
         <nav>
             <ul class="menu">
-                <a href="./html/index.html"><img src="./assets/Logo_Cadus.png" alt="logo du site" /></a>
+                <a href="../index.html"><img src="../assets/Logo_Cadus.png" alt="logo du site" /></a>
                 <li ${id1}>
-                    <a href="./html/index.html">Acceuil</a>
+                    <a href="../index.html">Acceuil</a>
                 </li>
                 <li ${id2}>
-                    <a href="./html/quisommenous.html">Qui somme-nous ?</a>
+                    <a href="../html/quisommenous.html">Qui somme-nous ?</a>
                 </li>
                 <li ${id3}>
-                    <a href="./html/action.html">Nos actions</a>
+                    <a href="../html/action.html">Nos actions</a>
                 </li>
                 <li ${id4}>
-                    <a href="./html/aide.html">Nous aider</a>
+                    <a href="../html/aide.html">Nous aider</a>
                 </li>
             </ul>
             <ul class="contact-button">
                 <li>
-                    <a href="./html/contact.html">
-                        <img src="./assets/arrow-circle.png" alt="arrow image">
+                    <a href="../html/contact.html">
+                        <img src="../assets/arrow-circle.png" alt="arrow image">
                         <p>Contacter</p>
                     </a>
                 </li>
@@ -96,16 +96,16 @@ function injectMobileNavbar() {
         <div class="off-screen-menu">
             <ul>
                 <li ${id1}>
-                    <a href="./html/index.html">Acceuil</a>
+                    <a href="../index.html">Acceuil</a>
                 </li>
                 <li ${id2}>
-                    <a href="./html/quisommenous.html">Qui somme-nous ?</a>
+                    <a href="../html/quisommenous.html">Qui somme-nous ?</a>
                 </li>
                 <li ${id3}>
-                    <a href="./html/action.html">Nos actions</a>
+                    <a href="../html/action.html">Nos actions</a>
                 </li>
                 <li ${id4}>
-                    <a href="./html/aide.html">Nous aider</a>
+                    <a href="../html/aide.html">Nous aider</a>
                 </li>
             </ul>
         </div>
@@ -117,13 +117,13 @@ function injectMobileNavbar() {
             </ul>
 
             <ul class="menu">
-                <a href="./html/index.html"><img src="./assets/Logo_Cadus_Mobile.svg" alt="logo du site" /></a>
+                <a href=".index.html"><img src="../assets/Logo_Cadus_Mobile.svg" alt="logo du site" /></a>
             </ul>
 
             <ul class="contact-button">
                 <li>
-                    <a href="./html/contact.html">
-                        <img src="./assets/arrow-circle.png" alt="arrow image">
+                    <a href="../html/contact.html">
+                        <img src="../assets/arrow-circle.png" alt="arrow image">
                         <p>Contacter</p>
                     </a>
                 </li>
