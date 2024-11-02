@@ -131,5 +131,215 @@ header {
 }
 
 
-/* Css pour contact-button en dehors de la hiearchie pour pouvoir 
-donner son style au contact-button du bento */
+@media (max-width: 800px) {
+  /* Main Menu */
+  header {
+    height: 5vh;
+    width: 100vw;
+    justify-content: space-around;
+
+    nav {
+      display: flex;
+      width: 100%;
+      background-color: var(--secondary);
+      justify-content: space-around;
+
+      ul {
+        display: flex;
+        list-style: none;
+        padding: 0 2em 0 0;
+      }
+
+      /* logo */
+      img {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        margin: 0 1em;
+      }
+
+      .menu {
+
+        li {
+          display: none;
+          margin: 0 1em;
+          color: var(--primary);
+          font-weight: 400;
+          transition: transform 200ms ease-in-out;
+
+          /* animation qui souleve le texte survole */
+          &:hover {
+            transform: translateY(-0.2em);
+          }
+
+          /* creation de la barre en dessous du texte */
+          &::after {
+            display: block;
+            content: '';
+            border-bottom: solid 0.15em var(--white);
+            border-radius: 10em;
+            transform: scaleX(0);
+            transform-origin: 0% 50%;
+            transition: transform 200ms ease-out;
+          }
+
+          /* affichage de la barre en dessous du texte */
+          &:hover::after {
+            transform: scaleX(1);
+          }
+        }
+
+        /* definition de la barre permanente de la page actuel */
+        #actual-page {
+          &::after {
+            display: block;
+            content: '';
+            border-bottom: solid 0.3em var(--white);
+            border-radius: 10em;
+            transform: scaleX(1);
+            transform-origin: 0% 50%;
+          }
+        }
+      }
+
+      .contact-button {
+        padding: 0;
+
+        li {
+          width: 4.2em;
+          display: flex;
+          height: 1em;
+          padding: auto;
+          background-color: var(--white);
+          border-radius: 10em;
+          text-align: center;
+          align-items: center;
+
+          a {
+            display: flex;
+            align-items: center;
+            text-align: center;
+          }
+
+          img {
+            width: 1em;
+            height: 1em;
+            margin: 0 0.2em 0 0;
+            transition: transform 200ms ease-in-out;
+          }
+
+          p {
+            font-size: 0.8em;
+            color: var(--secondary);
+            font-size: 500;
+            transition: all 200ms ease-in-out;
+
+            /* creation du nouveau contact */
+            &::after {
+              content: 'Contacter';
+              display: block;
+              position: absolute;
+              color: #527FB400;
+              transform: scaleX(1) translateY(-100%) translateX(-150%);
+              transition: all 200ms ease-in-out;
+            }
+          }
+
+          &:hover {
+            /* deplacement de l'icone */
+            img {
+              transform: translateX(450%);
+            }
+            /* disparition du texte */
+            p {
+              transform: translateX(100%);
+              color: #527FB400;
+              /* affichage et deplacement du nouveau contact */
+              &::after {
+                color: var(--secondary);
+                transform: scaleX(1) translateY(-100%) translateX(-130%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.off-screen-menu {
+  background-color: var(--secondary);
+  height: 89vh; /* 100vh - 11vh (menu height) */
+  width: 100%;
+  max-width: 80vw;
+  position: fixed;
+  top: 12.9vh;
+  left: -80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  text-align: center;
+  font-size: 2.5em;
+  transition: 300ms ease;
+  z-index: 998;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 2em 1em;
+    text-align: left;
+    font-size: 50%;
+    line-height: 2.5em;
+
+    li:active {
+      text-decoration: underline;
+    }
+  }
+}
+.off-screen-menu.active {
+  left: 0;
+}
+
+.ham-menu {
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  height: 4vh;
+  width: 2.5vw;
+  margin-left: auto;
+  position: relative;
+  background-color: var(--white);
+  border-radius: 20em;
+}
+.ham-menu span {
+  height: 0.2vh;
+  width: 65%;
+  background-color: var(--secondary);
+  border-radius: 20em ;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 300ms ease;
+}
+.ham-menu span:nth-child(1) {
+  height: 0.3vh;
+  top: 25%;
+}
+.ham-menu span:nth-child(3) {
+  height: 0.3vh;
+  top: 75%;
+}
+
+
+.ham-menu.active span:nth-child(1) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.ham-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+.ham-menu.active span:nth-child(3) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
