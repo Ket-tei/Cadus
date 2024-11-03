@@ -545,14 +545,28 @@ footer {
     grid-gap: 1em;
 
     .sentence {
+      left: 50%;
+      transform: translate(-50%, -50%);
       width: 95%;
       text-align: center;
       border-radius: 1.2em;
-      line-height: 1.5em;
+      line-height: 1.3em;
       background-color: var(--secondary);
-
+      
       grid-column: 1;
       grid-row: 1;
+      max-height: 18%;
+
+      h1 {
+        margin-top: 0.9em;
+        font-size: 1.1em;
+      }
+      span {
+        font-size: 1.2em;
+      }
+    }
+    .arrow {
+      padding-top: 50vh;
     }
   }
   

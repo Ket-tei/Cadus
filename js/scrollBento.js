@@ -11,7 +11,7 @@ if (window.innerWidth > 800) {
   runBentoAnimations();
 }
 else {
-  runSentenceAnimations("end 26%");
+  runSentenceAnimations("start start");
 }
 
 
@@ -32,6 +32,7 @@ function runSentenceAnimations(endString) {
         start: "top 26%",
         end: endString,
         pin: true,
+        markers: true,
       },
     });
 }

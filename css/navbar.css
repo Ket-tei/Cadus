@@ -142,7 +142,9 @@ header {
       display: flex;
       width: 100%;
       background-color: var(--secondary);
-      justify-content: space-around;
+      justify-content: center;
+      margin: auto;
+      background-color: red;
 
       ul {
         display: flex;
@@ -159,54 +161,21 @@ header {
       }
 
       .menu {
-
+        z-index: 999;
         li {
           display: none;
           margin: 0 1em;
           color: var(--primary);
           font-weight: 400;
           transition: transform 200ms ease-in-out;
-
-          /* animation qui souleve le texte survole */
-          &:hover {
-            transform: translateY(-0.2em);
-          }
-
-          /* creation de la barre en dessous du texte */
-          &::after {
-            display: block;
-            content: '';
-            border-bottom: solid 0.15em var(--white);
-            border-radius: 10em;
-            transform: scaleX(0);
-            transform-origin: 0% 50%;
-            transition: transform 200ms ease-out;
-          }
-
-          /* affichage de la barre en dessous du texte */
-          &:hover::after {
-            transform: scaleX(1);
-          }
-        }
-
-        /* definition de la barre permanente de la page actuel */
-        #actual-page {
-          &::after {
-            display: block;
-            content: '';
-            border-bottom: solid 0.3em var(--white);
-            border-radius: 10em;
-            transform: scaleX(1);
-            transform-origin: 0% 50%;
-          }
-        }
       }
 
       .contact-button {
+        z-index: 999;
         padding: 0;
 
         li {
-          width: 4.2em;
+          width: 4em;
           display: flex;
           height: 1em;
           padding: auto;
@@ -269,11 +238,11 @@ header {
 
 .off-screen-menu {
   background-color: var(--secondary);
-  height: 89vh; /* 100vh - 11vh (menu height) */
+  height: 100vh; /* 100vh - 11vh (menu height) */
   width: 100%;
   max-width: 80vw;
   position: fixed;
-  top: 12.9vh;
+  top: 0;
   left: -80vw;
   display: flex;
   flex-direction: column;
@@ -286,13 +255,19 @@ header {
   ul {
     list-style: none;
     padding: 0;
-    margin: 2em 1em;
+    margin: 5em 1em;
     text-align: left;
     font-size: 50%;
     line-height: 2.5em;
-
-    li:active {
-      text-decoration: underline;
+    
+    /* definition de la barre permanente de la page actuel */
+    #actual-page {
+      &::after {
+        display: block;
+        content: '';
+        border-bottom: solid 0.15em var(--white);
+        border-radius: 10em;
+      }
     }
   }
 }
@@ -342,4 +317,6 @@ header {
 .ham-menu.active span:nth-child(3) {
   top: 50%;
   transform: translate(-50%, -50%) rotate(-45deg);
+}
+
 }
