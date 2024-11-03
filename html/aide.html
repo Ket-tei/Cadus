@@ -3,39 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../style.css" />
-    <link rel="stylesheet" href="../css/navbar.css" />
-    <link rel="stylesheet" href="../css/aide.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./css/navbar.css" />
+    <link rel="stylesheet" href="./css/aide.css" />
     <script src="https://kit.fontawesome.com/44edc4c182.js" crossorigin="anonymous"></script>
     <title>Faire un Don - Cadus</title>
   </head>
   <body>
     <main>
- 
       <section class="don">
         <h1>Faire un don</h1>
         <p>
-          Vous pouvez soutenir notre association en choisissant un montant de don ci-dessous.
+          Vous pouvez soutenir notre association en choisissant un montant de
+          don ci-dessous.
         </p>
       </section>
       <section class="don-formulaire">
         <button class="bouton" id="boutonFaireDon">Faire un don</button>
-        
-        <div id="formulaireDon" style="display: none;">
+
+        <div id="formulaireDon" style="display: none">
           <h2>Choisissez votre montant de don</h2>
-          <label for="montant-don">Montant : <span id="montant-affiche">25 €</span></label>
-          <input
-            type="range"
-            id="montant-don"
-            min="1"
-            max="50"
-            value="25"
-          />
+          <label for="montant-don"
+            >Montant : <span id="montant-affiche">25 €</span></label
+          >
+          <input type="range" id="montant-don" min="1" max="50" value="25" />
           <button id="autre-montant">Autre montant</button>
 
-          <div id="autre-montant-saisie" style="display: none;">
+          <div id="autre-montant-saisie" style="display: none">
             <label for="montant-custom">Entrez votre don :</label>
-            <input type="number" id="montant-custom"/>
+            <input type="number" pattern="\d*" id="montant-custom" />
           </div>
 
           <button type="button" id="validerDon">Valider le don</button>

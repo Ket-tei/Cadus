@@ -65,16 +65,21 @@
 
   .bouton {
     background-color: var(--secondary);
-    display: flex;
-    font-size: 1.5em;
     color: white;
-    justify-content: center;
-    border-radius: 0.6em;
-    padding: 0.3em 0.8em;
     border: none;
+    border-radius: 0.5em;
+    padding: 0.5em;
+    font-size: 1em;
+    border: 2px solid transparent;
     cursor: pointer;
+    margin-bottom: 1em;
+    transition: background-color 0.5s, border-color 0.5s, color 0.5s;
     &:hover {
-      background-color: var(--secondaryButton);
+      background-color: white;
+      border-style: solid;
+      border-color: var(--secondary);
+      color: var(--secondary);
+      
     }
   }
 }
