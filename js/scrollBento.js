@@ -32,7 +32,6 @@ function runSentenceAnimations(endString) {
         start: "top 26%",
         end: endString,
         pin: true,
-        markers: true,
       },
     });
 }
