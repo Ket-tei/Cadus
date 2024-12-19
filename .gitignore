@@ -2,3 +2,5 @@
 .vs
 
 .vite/
+
+/vendor/

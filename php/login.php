@@ -1,27 +1,27 @@
 <?php
-        $server = "82.66.207.188";
-        $user = "nicolas";
-        $password = "NN8yM8NXSQyaYvd";
+        $host = "82.66.207.188";
+        $port = "5432";
         $dbname = "SAE";
-
-        $connexionBD = new PDO("pgsql:host=$server;dbname=$dbname", $user, $password);
-
-        if ($connexionBD->errorCode()) {
-            throw new Exception("Impossible de se connecter à la base de données : " . $connexionBD->errorInfo()[2]);
-        }
-        echo "test";
+        $user = "nicolas";
+        $password = "NN8yM8NXSQyaYvd"; 
+        $connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password} ";
+        $dbconn = pg_connect($connection_string);
+        echo"ok 1";
 
         if (isset($_POST['login']) && isset($_POST['password'])) {
-            $login = pg_escape_string($connexionBD, $_POST['login']);
-            $password = pg_escape_string($connexionBD, $_POST['password']);
+            echo"ok 2";
+            // $hashpassword = md5($_POST['pwd']);
+            $sql ="select * from utilisateurs where login = '".pg_escape_string($_POST['login'])."' and password ='".pg_escape_string($_POST['password'])."'";
+            // $sql = "SELECT * FROM utilisateurs WHERE login = '$login' AND password = '$password'";
+            $data = pg_query($dbconn,$sql); 
+            $login_check = pg_num_rows($data);
+            echo"ok 3";
+            if($login_check > 0){ 
 
-            $sql = "SELECT * FROM utilisateurs WHERE login = '$login' AND password = '$password'";
-            $EtatConnexion = $connexionBD->query($sql);
-            
-            if ($EtatConnexion->rowCount() === 1) {
-                echo "Connexion réussie";
-            } else {
-                echo "Connexion échouée";
+                echo "Login Successfully";    
+            }else{
+
+                echo "Invalid Details";
             }
         }
-        ?>
+?>
