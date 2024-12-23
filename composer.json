@@ -1,9 +1,16 @@
 {
-    "name": "vendor/raph",
+    "name": "raph9/cadus",
     "autoload": {
         "psr-4": {
-            "Vendor\\Raph\\": "src/"
+            "Raph9\\Cadus\\": "src/",
+            "App\\": "php/app/"
         }
     },
+    "authors": [
+        {
+            "name": "Kettei",
+            "email": "raph95004@gmail.com"
+        }
+    ],
     "require": {}
 }
