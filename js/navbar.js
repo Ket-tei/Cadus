@@ -52,13 +52,13 @@ function injectDesktopNavbar() {
             </ul>
             <ul class="login-button">
                 <li>
-                    <a href="../html/">
+                    <a href="../html/signup.html">
                         <img src="../assets/arrow-circle.png" alt="arrow image">
                         <p>S'inscrire</p>
                     </a>
                 </li>
                 <li>
-                    <a href="../html/">
+                    <a href="../html/signin.html">
                         <img src="../assets/arrow-circle.png" alt="arrow image">
                         <p>Se connecter</p>
                     </a>
