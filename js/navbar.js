@@ -10,10 +10,8 @@ function injectDesktopNavbar() {
     const actualPath = window.location.pathname.split('/').pop().split('.')[0];
 
     // Définit l'id de la page actuelle
-    let id1 = "", id2 = "", id3 = "", id4 = "";
+    let id1 = "", id2 = "", id3 = "", id4 = "", id5 = "";
     switch (actualPath) {
-        case "contact":
-            break;
         case "quisommenous":
             id2 = id;
             break;
@@ -22,6 +20,9 @@ function injectDesktopNavbar() {
             break;
         case "aide":
             id4 = id;
+            break;
+        case "contact":
+            id5 = id;
             break;
         default:
             id1 = id;
@@ -45,12 +46,21 @@ function injectDesktopNavbar() {
                 <li ${id4}>
                     <a href="../html/aide.html">Nous aider</a>
                 </li>
+                <li ${id5}>
+                    <a href="../html/contact.html">Contacter</a>
+                </li>
             </ul>
-            <ul class="contact-button">
+            <ul class="login-button">
                 <li>
-                    <a href="../html/contact.html">
+                    <a href="../html/">
                         <img src="../assets/arrow-circle.png" alt="arrow image">
-                        <p>Contacter</p>
+                        <p>S'inscrire</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="../html/">
+                        <img src="../assets/arrow-circle.png" alt="arrow image">
+                        <p>Se connecter</p>
                     </a>
                 </li>
             </ul>

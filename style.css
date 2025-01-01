@@ -135,60 +135,47 @@
 
       .contact-button-bento {
         padding: 0;
-        margin: 1em auto auto auto;
+        margin: 0.8em auto auto auto;
         width: fit-content;
 
         li {
           display: flex;
-          height: 1em;
-          padding: 0.2em 0.6em 0.2em 0.1em;
+          height: 1.4em;
+          padding: 0.1em 1em 0.1em 0.3em;
           background-color: var(--white);
           border-radius: 10em;
-
+          text-align: center;
+          align-items: center;
+          border: 2px solid var(--primary);
+          margin-right: 1em;
+  
           a {
             display: flex;
             align-items: center;
             text-align: center;
           }
-
+  
           img {
-            width: 1em;
-            height: 1em;
+            width: 1.2em;
+            height: 1.2em;
             margin: 0 0.5em 0 0;
             transition: transform 200ms ease-in-out;
           }
-
+  
           p {
             color: var(--secondary);
-            font-weight: 600;
-            font-size: 0.8em;
+            font-size: 500;
             transition: all 200ms ease-in-out;
-
-            /* creation du nouveau contact */
-            &::after {
-              content: "Contacter";
-              display: block;
-              position: absolute;
-              color: #527fb400;
-              transform: scaleX(1) translateY(-100%) translateX(-150%);
-              transition: all 200ms ease-in-out;
-            }
           }
-
+  
           &:hover {
-            /* deplacement de l'icone */
-            img {
-              transform: translateX(450%);
-            }
-            /* disparition du texte */
             p {
-              transform: translateX(100%);
-              color: #527fb400;
-              /* affichage et deplacement du nouveau contact */
-              &::after {
-                color: var(--secondary);
-                transform: scaleX(1) translateY(-100%) translateX(-130%);
-              }
+              color: var(--primary);
+            }
+            background-color: var(--secondary);
+            border-color: var(--primary);
+            img {
+              filter: brightness(0) invert(1);
             }
           }
         }

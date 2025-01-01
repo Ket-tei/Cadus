@@ -70,7 +70,7 @@ header {
         }
       }
   
-      .contact-button {
+      .login-button {
         li {
           display: flex;
           height: 1.4em;
@@ -79,6 +79,8 @@ header {
           border-radius: 10em;
           text-align: center;
           align-items: center;
+          border: 2px solid var(--primary);
+          margin-right: 1em;
   
           a {
             display: flex;
@@ -97,32 +99,16 @@ header {
             color: var(--secondary);
             font-size: 500;
             transition: all 200ms ease-in-out;
-  
-            /* creation du nouveau contact */
-            &::after {
-              content: 'Contacter';
-              display: block;
-              position: absolute;
-              color: #527FB400;
-              transform: scaleX(1) translateY(-100%) translateX(-150%);
-              transition: all 200ms ease-in-out;
-            }
           }
   
           &:hover {
-            /* deplacement de l'icone */
-            img {
-              transform: translateX(450%);
-            }
-            /* disparition du texte */
             p {
-              transform: translateX(100%);
-              color: #527FB400;
-              /* affichage et deplacement du nouveau contact */
-              &::after {
-                color: var(--secondary);
-                transform: scaleX(1) translateY(-100%) translateX(-130%);
-              }
+              color: var(--primary);
+            }
+            background-color: var(--secondary);
+            border-color: var(--primary);
+            img {
+              filter: brightness(0) invert(1);
             }
           }
         }
