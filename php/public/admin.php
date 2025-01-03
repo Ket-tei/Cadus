@@ -5,13 +5,13 @@ use App\Messages;
 if(!session_id())
   session_start();
 
-$title = "Page sécurisé";
+$title = "Page Administateur";
 require_once './header.php';
 
 
 if(isset($_SESSION['auth'])) {
 echo "<div class='container mt-5'>
-  <h2>Page sécurisée</h2>
+  <h2>Panel d'administration<h2>
   <div class='container'>";
 
   echo "<a href='index.php'>

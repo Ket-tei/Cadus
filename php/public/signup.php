@@ -3,7 +3,7 @@ if(!session_id())
   session_start();
 
 use App\Authentification;
-use App\BddConnect;
+use App\BddConnectlite;
 use App\Exceptions\AuthentificationException;
 use App\Exceptions\BddConnectException;
 use App\MariaDBUserRepository;
@@ -13,7 +13,7 @@ use App\Messages;
 require_once 'header.php';
 require_once '../../vendor/autoload.php';
 
-$bdd = new BddConnect();
+$bdd = new BddConnectlite();
 
 try {
   $pdo = $bdd->connexion();
@@ -22,7 +22,7 @@ catch(BddConnectException $e) {
   Messages::goHome(
     $e->getMessage(),
     $e->getType(),
-    "public/index.php");
+    "./signup.php");
   die();
 }
 
@@ -48,6 +48,6 @@ else {
   $type = "danger";
 }
 
-Messages::goHome($message, $type, "public/index.php");
+Messages::goHome($message, $type, "./signup.php");
 
 require_once 'footer.php';
