@@ -19,6 +19,7 @@ try {
   $pdo = $bdd->connexion();
 }
 catch(BddConnectException $e) {
+  echo "hello";
   Messages::goHome(
     $e->getMessage(),
     $e->getType(),
@@ -48,6 +49,6 @@ else {
   $type = "danger";
 }
 
-Messages::goHome($message, $type, "./signup.php");
+Messages::goHome($message, $type, "../../../Cadus/html/signin.html");
 
 require_once 'footer.php';

@@ -1,15 +1,36 @@
 <?php
 
+use App\Authentification;
+use App\BddConnectlite;
+use App\Exceptions\AuthentificationException;
+use App\Exceptions\BddConnectException;
+use App\MariaDBUserRepository;
 use App\Messages;
 
 if(!session_id())
   session_start();
 
 $title = "Page Administateur";
+require_once '../../vendor/autoload.php';
+
 require_once './header.php';
+$bdd = new BddConnectlite();
 
+try {
+  $pdo = $bdd->connexion();
+}
+catch(BddConnectException $e) {
+  Messages::goHome(
+      $e->getMessage(),
+      $e->getType(),
+      "./signup.php");
+  die();
+}
 
-if(isset($_SESSION['auth'])) {
+$trousseau = new MariaDBUserRepository($pdo);
+$auth = new Authentification($trousseau);
+
+if(isset($_SESSION['auth']) && $trousseau->findRoleByEmail($_SESSION['auth']) == 'admin') {
 echo "<div class='container mt-5'>
   <h2>Panel d'administration<h2>
   <div class='container'>";
@@ -21,7 +42,7 @@ echo "<div class='container mt-5'>
   unset($_SESSION['auth']);
 }
 else {
-  Messages::goHome("Accès interdit", "danger", "public/index.php");
+  Messages::goHome("Accès interdit", "danger", "../../../Cadus/html/signin.html");
 }
 
 echo "</div></div>";

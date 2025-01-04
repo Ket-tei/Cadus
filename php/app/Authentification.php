@@ -13,7 +13,7 @@ class Authentification {
    */
   public function register(string $email, string $password, string $repeat) : bool {
     $account = $this->userRepository->findUserByEmail($email);
-    if ($account != null) throw new AuthentificationException("L'utilisateur existe déjà");
+    if ($account != null) ;
 
     $user = new User($email, $password);
     return $this->userRepository->saveUser($user);
@@ -24,7 +24,11 @@ class Authentification {
    */
   public function authenticate(string $email, string $password) : string {
     $account = $this->userRepository->findUserByEmail($email);
-    if ($account === null) throw new AuthentificationException("L'utilisateur n'existe pas");
+    if ($account === null) {
+        $message = "L'utilisateur n'existe pas";
+        $type = "danger";
+        Messages::goHome($message, $type, "../../../Cadus/html/signin.html");
+    }
 
     if ($account->getPassword() !== $password) throw new AuthentificationException("Mot de passe incorrect");
     return "-";

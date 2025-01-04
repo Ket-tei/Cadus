@@ -127,7 +127,7 @@ function injectMobileNavbar() {
             </ul>
 
             <ul class="menu">
-                <a href=".index.html"><img src="../assets/Logo_Cadus_Mobile.svg" alt="logo du site" /></a>
+                <a href="../index.html"><img src="../assets/Logo_Cadus_Mobile.svg" alt="logo du site" /></a>
             </ul>
 
             <ul class="contact-button">
