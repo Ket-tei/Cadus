@@ -14,8 +14,22 @@
 </head>
 <body>
 <script src="../js/navbar.js"></script>
+<script src="../js/sondage.js"></script>
 
+<div class="container">
+  <h1>Sondage</h1>
+  <form id="sondage-formulaire" method="POST" action="../php/app/envoiFormulaire.php">
+    <!-- formulaire qui charge les questions présente dans la bdd sqlite avec les choix de réponses -->
+    <div class="form-group">
+    </div>
+  </form>
 
+  <div class="deconnexion">
+    <form method="POST" action="../php/app/logout.php">
+      <button type="submit" class="boutonDeconnexion">Se déconnecter</button>
+    </form>
+  </div>
+</div>
 
 
 </body>

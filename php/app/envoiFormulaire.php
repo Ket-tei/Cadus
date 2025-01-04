@@ -44,11 +44,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['reponses'])) {
     try {
         $pdo->beginTransaction();
 
-        $stmt = $pdo->prepare("INSERT INTO reponses (id_question, id_utilisateur, reponse) VALUES (:id_question, :id_utilisateur, :reponse)");
+        // Insert a new session and get the session ID
+        $pdo->exec("INSERT INTO sessions DEFAULT VALUES");
+        $sessionId = $pdo->lastInsertId();
+
+        $stmt = $pdo->prepare("INSERT INTO reponses (id_question, id_sessions, reponse) VALUES (:id_question, :session_id, :reponse)");
 
         foreach ($responses as $questionId => $response) {
             $stmt->bindParam(':id_question', $questionId);
-            $stmt->bindParam(':id_utilisateur', $userId);
+            $stmt->bindParam(':session_id', $sessionId);
             $stmt->bindParam(':reponse', $response);
             $stmt->execute();
         }

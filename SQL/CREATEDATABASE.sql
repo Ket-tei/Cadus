@@ -1,6 +1,10 @@
 -- table utilisateurs
 DROP TABLE questions;
 DROP TABLE choix;
+DROP TABLE reponses;
+DROP TABLE utilisateurs;
+DROP TABLE sessions;
+
 
 CREATE TABLE IF NOT EXISTS utilisateurs (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -93,14 +97,15 @@ INSERT INTO choix (id_question, texte) VALUES
 
 
 
-
+CREATE TABLE sessions (
+    id INT AUTO_INCREMENT PRIMARY KEY
+);
 
 -- table des réponses
 CREATE TABLE IF NOT EXISTS reponses (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     id_question INTEGER NOT NULL,
-    id_utilisateur INTEGER NOT NULL,
+    id_sessions INTEGER NOT NULL,
     reponse TEXT NOT NULL,
-    FOREIGN KEY (id_question) REFERENCES questions(id),
-    FOREIGN KEY (id_utilisateur) REFERENCES utilisateurs(id)
+    FOREIGN KEY (id_question) REFERENCES questions(id)
 );

@@ -31,7 +31,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $auth->authenticate($_POST['email'], $hashpassword);
     $_SESSION['auth'] = $_POST['email'];
     if($trousseau->findRoleByEmail($_POST['email']) == 'admin') {
-        header('Location: admin.php');
+        header('Location: ../../html/adminPage.html');
     }
     else {
         header('Location: ../../html/userPage.html');
