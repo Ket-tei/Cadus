@@ -27,7 +27,7 @@ class Authentification {
     if ($account === null) {
         $message = "L'utilisateur n'existe pas";
         $type = "danger";
-        Messages::goHome($message, $type, "../../../Cadus/html/signin.html");
+        Messages::goHome($message, $type, "../../html/signin.html");
     }
 
     if ($account->getPassword() !== $password) throw new AuthentificationException("Mot de passe incorrect");

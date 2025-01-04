@@ -1,4 +1,3 @@
-
 -- table utilisateurs
 DROP TABLE questions;
 DROP TABLE choix;

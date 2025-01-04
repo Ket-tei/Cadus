@@ -1,5 +1,4 @@
 @import url("base.css");
-/*Titre*/
 h1 {
     font-size: 2.5em;
     color: var(--secondary);
@@ -7,7 +6,6 @@ h1 {
     text-align: center;
     margin-top: 0.5em;
 }
-/* Section Connexion */
 .connexion {
     display: flex;
     justify-content: center;
@@ -18,7 +16,6 @@ h1 {
 
 
 
-/* Formulaire */
 .form-login {
     background-color: var(--white);
     padding: 2em;
@@ -56,7 +53,6 @@ input[type="password"]:focus {
     box-shadow: 0 0 3px black;
 }
 
-/* Bouton */
 .boutonInscription {
     display: block;
     margin: 0 auto;

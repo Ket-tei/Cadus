@@ -1,0 +1,98 @@
+
+@import url("base.css");
+.container {
+    display: flex;
+    flex-direction: column; /* Empile les éléments verticalement */
+    justify-content: space-between; /* Espace entre le titre, formulaire et bouton */
+    align-items: center;
+    min-height: 100vh; /* Hauteur complète de la fenêtre */
+    background-color: var(--primary);
+    padding: 1em;
+    position: relative; /* Nécessaire pour positionner des éléments absolus */
+}
+
+
+
+h1 {
+    text-align: center;
+    font-size: 2em;
+    color: var(--secondary);
+    margin-bottom: 1em;
+    margin-top: 0;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1.5em;
+}
+
+label {
+    font-size: 1em;
+    color: var(--secondary);
+    margin-bottom: 0.5em;
+}
+
+select, input {
+    width: 100%;
+    padding: 0.5em;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.dejaRepondu {
+    color: red;
+}
+.accesInterdit{
+    color: red;
+}
+
+.boutonDeconnexion {
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    display: block;
+    margin: 0 auto;
+    background-color: red;
+    color: white;
+    border-radius: 0.5em;
+    padding: 0.5em;
+    font-size: 1em;
+    border: 2px solid transparent;
+    cursor: pointer;
+    margin-bottom: 1em;
+    transition: background-color 0.5s, border-color 0.5s, color 0.5s;
+    &:hover {
+        background-color: white;
+        border-style: solid;
+        border-color: red;
+        color: red;
+    }
+
+}
+
+
+.EnvoiFormulaire {
+    display: block;
+    margin: 0 auto;
+    background-color: var(--secondary);
+    color: white;
+    border-radius: 0.5em;
+    padding: 0.5em;
+    font-size: 1em;
+    border: 2px solid transparent;
+    cursor: pointer;
+    margin-bottom: 1em;
+    transition: background-color 0.5s, border-color 0.5s, color 0.5s;
+    &:hover {
+        background-color: white;
+        border-style: solid;
+        border-color: var(--secondary);
+        color: var(--secondary);
+    }
+
+}
+
+

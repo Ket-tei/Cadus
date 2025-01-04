@@ -19,7 +19,7 @@ try {
   $pdo = $bdd->connexion();
 }
 catch(BddConnectException $e) {
-  Messages::goHome($e->getMessage(), $e->getType(), "../../Cadus/html/aide.html");
+  Messages::goHome($e->getMessage(), $e->getType(), "../../html/signin.html");
 }
 
 $trousseau = new MariaDBUserRepository($pdo);
@@ -34,11 +34,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Location: admin.php');
     }
     else {
-        header('Location: userPage.php');
+        header('Location: ../../html/userPage.html');
     }
   }
   catch(BddConnectException $e) {
-    Messages::goHome($e->getMessage(), $e->getType(),'/index.php');
+    Messages::goHome($e->getMessage(), $e->getType(),'../../html/signin.html');
   }
 
 

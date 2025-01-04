@@ -17,14 +17,13 @@ try {
     Messages::goHome(
         $e->getMessage(),
         $e->getType(),
-        "../../../Cadus/html/signin.html"
+        "../../html/signin.html"
     );
     die();
 }
 
-// Vérification de l'utilisateur connecté
 if (!isset($_SESSION['auth'])) {
-    Messages::goHome("Accès interdit", "danger", "../../../Cadus/html/signin.html");
+    Messages::goHome("Accès interdit", "danger", "../../html/signin.html");
     die();
 }
 
@@ -33,19 +32,16 @@ $stmt = $pdo->prepare("SELECT id, sondage_effectue FROM utilisateurs WHERE email
 $stmt->bindParam(':email', $email);
 $stmt->execute();
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
-// on revérifie à nouveau à l'envoi pour être sur qu'il n'a pas été répondu dans un autre onglet en même temps
 if ($user['sondage_effectue']) {
-    Messages::goHome("Vous avez déjà répondu au sondage.", "info", "userPage.php");
+    Messages::goHome("Vous avez déjà répondu au sondage.", "info", "../../html/userPage.html");
     die();
 }
 
-// Traitement des réponses
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['reponses'])) {
     $responses = $_POST['reponses'];
     $userId = $user['id'];
 
     try {
-        // Démarrer une transaction pour garantir la cohérence des données
         $pdo->beginTransaction();
 
         $stmt = $pdo->prepare("INSERT INTO reponses (id_question, id_utilisateur, reponse) VALUES (:id_question, :id_utilisateur, :reponse)");
@@ -57,25 +53,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['reponses'])) {
             $stmt->execute();
         }
 
-        // Marquer le sondage comme effectué
         $updateStmt = $pdo->prepare("UPDATE utilisateurs SET sondage_effectue = TRUE WHERE id = :id");
         $updateStmt->bindParam(':id', $userId);
         $updateStmt->execute();
 
-        // Valider la transaction
         $pdo->commit();
 
         $_SESSION['flash']['success'] = "Merci d'avoir répondu au sondage.";
-        header('Location: userPage.php');
+        header('Location: ../../html/userPage.html');
     } catch (Exception $e) {
-        // Annuler la transaction en cas d'erreur
         $pdo->rollBack();
         $_SESSION['flash']['danger'] = "Une erreur est survenue lors de la soumission du sondage. Veuillez réessayer.";
-        header('Location: userPage.php');
+        header('Location: ../../html/userPage.html');
     }
 } else {
     $_SESSION['flash']['danger'] = "Aucune réponse n'a été soumise.";
-    header('Location: userPage.php');
+    header('Location: ../../html/userPage.html');
 }
 
 exit();

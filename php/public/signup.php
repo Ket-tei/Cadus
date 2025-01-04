@@ -49,6 +49,6 @@ else {
   $type = "danger";
 }
 
-Messages::goHome($message, $type, "../../../Cadus/html/signin.html");
+Messages::goHome($message, $type, "../../html/signin.html");
 
 require_once 'footer.php';
