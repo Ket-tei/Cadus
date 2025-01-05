@@ -44,7 +44,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['reponses'])) {
     try {
         $pdo->beginTransaction();
 
-        // Insert a new session and get the session ID
         $pdo->exec("INSERT INTO sessions DEFAULT VALUES");
         $sessionId = $pdo->lastInsertId();
 

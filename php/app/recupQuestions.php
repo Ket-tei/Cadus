@@ -49,11 +49,11 @@ foreach ($questions as $question) {
         $choicesStmt = $pdo->prepare("SELECT * FROM choix WHERE id_question = :id_question");
         $choicesStmt->bindParam(':id_question', $question['id']);
         $choicesStmt->execute();
-        $choices = $choicesStmt->fetchAll(PDO::FETCH_ASSOC);
+        $choix = $choicesStmt->fetchAll(PDO::FETCH_ASSOC);
 
         echo "<select class='form-control' name='reponses[{$question['id']}]' id='question-{$question['id']}' required>";
         echo "<option value=''>Sélectionnez une réponse</option>";
-        foreach ($choices as $choice) {
+        foreach ($choix as $choice) {
             echo "<option value='" . htmlspecialchars($choice['texte']) . "'>" . htmlspecialchars($choice['texte']) . "</option>";
         }
         echo "</select>";

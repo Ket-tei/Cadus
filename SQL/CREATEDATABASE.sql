@@ -1,4 +1,3 @@
--- table utilisateurs
 DROP TABLE questions;
 DROP TABLE choix;
 DROP TABLE reponses;
@@ -13,19 +12,16 @@ CREATE TABLE IF NOT EXISTS utilisateurs (
     role TEXT CHECK(role IN ('user', 'admin')) DEFAULT 'user',
     sondage_effectue BOOLEAN DEFAULT FALSE
 );
---insertion de données
 INSERT INTO utilisateurs (email, mot_de_passe, role) VALUES
     ('nicolas@example.com', '81dc9bdb52d04dc20036dbd8313ed055', 'user'),
     ('admin@example.com', '81dc9bdb52d04dc20036dbd8313ed055', 'admin');
 
--- table des questions
 CREATE TABLE IF NOT EXISTS questions (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     texte TEXT NOT NULL,
     type_de_reponse TEXT CHECK(type_de_reponse IN ('texte', 'numerique', 'choix')) NOT NULL
 );
 
--- insertion des questions
 INSERT INTO questions (texte, type_de_reponse) VALUES
     ('Quel est votre âge ?', 'numerique'),
     ('Quel est votre sexe ?', 'choix'),
@@ -41,7 +37,6 @@ INSERT INTO questions (texte, type_de_reponse) VALUES
 
 
 
--- table des questions à choix multiples
 
 CREATE TABLE IF NOT EXISTS choix (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -49,7 +44,6 @@ CREATE TABLE IF NOT EXISTS choix (
     texte TEXT NOT NULL,
     FOREIGN KEY (id_question) REFERENCES questions(id)
 );
--- insertion des choix
 INSERT INTO choix (id_question, texte) VALUES
     (2, 'Homme'),
     (2, 'Femme'),
@@ -96,16 +90,16 @@ INSERT INTO choix (id_question, texte) VALUES
     (11, 'Je ne souhaite pas répondre');
 
 
-
+-- une session correspond à un sondage effectué par un utilisateur. chaque fois qu'un sondage est envoyé, toute ses réponses se verront atribuer un id
 CREATE TABLE sessions (
     id INT AUTO_INCREMENT PRIMARY KEY
 );
 
--- table des réponses
 CREATE TABLE IF NOT EXISTS reponses (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     id_question INTEGER NOT NULL,
     id_sessions INTEGER NOT NULL,
     reponse TEXT NOT NULL,
-    FOREIGN KEY (id_question) REFERENCES questions(id)
+    FOREIGN KEY (id_question) REFERENCES questions(id),
+    FOREIGN KEY (id_sessions) REFERENCES sessions(id)
 );
