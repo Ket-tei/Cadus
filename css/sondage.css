@@ -2,13 +2,13 @@
 @import url("base.css");
 .container {
     display: flex;
-    flex-direction: column; /* Empile les éléments verticalement */
-    justify-content: space-between; /* Espace entre le titre, formulaire et bouton */
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    min-height: 100vh; /* Hauteur complète de la fenêtre */
+    min-height: 100vh;
     background-color: var(--primary);
     padding: 1em;
-    position: relative; /* Nécessaire pour positionner des éléments absolus */
+    position: relative;
 }
 
 

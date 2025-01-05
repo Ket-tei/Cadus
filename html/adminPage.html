@@ -6,23 +6,59 @@
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/navbar.css" />
   <link rel="stylesheet" href="../css/login.css" />
+  <link rel="stylesheet" href="../css/adminPage.css" />
 
+  <script src="../js/verifAdmin.js"></script>
   <title>Page Admin</title>
 </head>
 <body>
 <script src="https://d3js.org/d3.v6.min.js"></script> <!-- Importation de D3 -->
 <script src="../js/navbar.js"></script>
 <main>
-  <h1>Administration</h1>
 
-  <div id="graphiques-container">
-    <div id="graphique-1"></div>
-    <div id="graphique-2"></div>
+  <h1>Administration</h1>
+  <div class="zoneGraphique">
+    <h2>Statistiques des personnes</h2>
+    <div class="graphiquePersonnes">
+
+    <div class="graphique">
+      <div id="graphique1"></div>
+      <p class="graphiqueTitre">Graphique 1 : proportions d'âge des personnes ayant répondu</p>
+    </div>
+
+    <div class="graphique">
+      <div id="graphique2"></div>
+      <p class="graphiqueTitre">Graphique 2 : Répartition d'homme et de femme</p>
+    </div>
+    </div>
+    <h2>Statistiques des lieux de vie</h2>
+    <div class="graphiqueLieuVie">
+        <div class="graphique">
+            <div id="graphique3"></div>
+            <p class="graphiqueTitre">Graphique 3 : Répartition des personnes par lieu de vie</p>
+        </div>
+      <div class="graphique">
+        <div id="graphique5"></div>
+        <p class="graphiqueTitre">Graphique 4 : Répartitions des personnes par zone</p>
+      </div>
+      <div class="graphique">
+        <div id="graphique4"></div>
+        <p class="graphiqueTitre">Graphique 5 : Répartitions des personnes par régions</p>
+    </div>
+
   </div>
 
+
+</div>
+
+  <div class="deconnexion">
+    <form method="POST" action="../php/app/logout.php">
+      <button type="submit" class="boutonDeconnexion">Se déconnecter</button>
+    </form>
+  </div>
+  <script src="../js/d3_graphiques.js"></script>
 </main>
 
-<!-- Chargement du fichier JavaScript D3 -->
-<script src="../js/d3_graphiques.js"></script>
+
 </body>
 </html>

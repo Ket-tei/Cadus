@@ -1,8 +1,8 @@
+DROP TABLE utilisateurs;
 DROP TABLE questions;
 DROP TABLE choix;
-DROP TABLE reponses;
-DROP TABLE utilisateurs;
 DROP TABLE sessions;
+DROP TABLE reponses;
 
 
 CREATE TABLE IF NOT EXISTS utilisateurs (
@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS questions (
 INSERT INTO questions (texte, type_de_reponse) VALUES
     ('Quel est votre âge ?', 'numerique'),
     ('Quel est votre sexe ?', 'choix'),
-    ('Quel est votre statut ?', 'choix'),
+    ('Où habitez vous ?', 'choix'),
     ('Dans quelle région vivez-vous ?', 'choix'),
     ('Vivez-vous dans une zone urbaine ou rurale ?', 'choix'),
     ('Quel est votre activité ?', 'choix'),
@@ -48,8 +48,13 @@ INSERT INTO choix (id_question, texte) VALUES
     (2, 'Homme'),
     (2, 'Femme'),
     (2, 'Autre'),
-    (3, 'Adulte'),
-    (3, 'Adolescent'),
+    (3, 'Chez vos parents'),
+    (3, 'En colocation'),
+    (3, 'Seul'),
+    (3, 'En foyer'),
+    (3, 'En maison de retraite'),
+    (3, 'En logement social'),
+    (3, 'En logement étudiant'),
     (4, 'Auvergne-Rhône-Alpes'),
     (4, 'Bourgogne-Franche-Comté'),
     (4, 'Bretagne'),

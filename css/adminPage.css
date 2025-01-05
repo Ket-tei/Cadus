@@ -1,0 +1,76 @@
+@import url("base.css");
+
+.zoneGraphique {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: var(--primary);
+    position: relative;
+    margin-top: 3em;
+}
+
+.graphiquePersonnes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap:1.7em;
+}
+.graphiqueLieuVie {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap:1.7em;
+}
+h1 {
+    text-align: center;
+    font-size: 2em;
+    color: var(--secondary);
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+h2 {
+    text-align: center;
+    text-decoration: underline;
+    font-size: 1.5em;
+    color: var(--secondary);
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+.graphique {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%; /* Ajustez selon vos besoins */
+}
+
+.graphiqueTitre {
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 10px;
+    color: #333;
+}
+.boutonDeconnexion {
+    position: absolute;
+    top: 5em;
+    left: 1em;
+    display: block;
+    margin: 0 auto;
+    background-color: red;
+    color: white;
+    border-radius: 0.5em;
+    padding: 0.5em;
+    font-size: 1em;
+    border: 2px solid transparent;
+    cursor: pointer;
+    margin-bottom: 1em;
+    transition: background-color 0.5s, border-color 0.5s, color 0.5s;
+    &:hover {
+        background-color: white;
+        border-style: solid;
+        border-color: red;
+        color: red;
+    }
+
+}

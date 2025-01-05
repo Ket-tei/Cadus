@@ -23,8 +23,10 @@ $trousseau = new MariaDBUserRepository($pdo);
 $auth = new Authentification($trousseau);
 
 if(!isset($_SESSION['auth'])) {
-    echo "<div class='accesInterdit'>Accès interdit. Veuillez vous connecter.</div>";
-    die("");
+
+    header('Location: ../../html/signin.html', true, 301);
+    exit();
+
 }
 
 $email = $_SESSION['auth'];
