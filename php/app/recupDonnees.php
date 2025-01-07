@@ -30,19 +30,22 @@ function getRegionData($pdo, $idquestion) {
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+
 $graphique1Data = getGraphiqueData($pdo, 1);
 $graphique2Data = getGraphiqueData($pdo, 2);
 $graphique3Data = getGraphiqueData($pdo, 3);
 $graphique4Data = getGraphiqueData($pdo, 4);
 $graphique5Data = getGraphiqueData($pdo, 5);
 $graphiqueRegion = getRegionData($pdo, 4);
+
 echo json_encode([
     'graphique1' => $graphique1Data, // age
     'graphique2' => $graphique2Data, // sexe
     'graphique3' => $graphique3Data, /// lieu de vie
     'graphique4' => $graphique4Data, // région
     'graphique5' => $graphique5Data,  // zone urbaine/rurale
-    'graphiqueRegion' => $graphiqueRegion // region
+    'graphiqueRegion' => $graphiqueRegion, // region
+
 ]);
 
 ?>

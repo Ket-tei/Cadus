@@ -13,6 +13,7 @@ function recupDonneephp() {
             AffichageGraph3(data.graphique3);  // Lieu de vie
             AffichageGraph4(data.graphique4, data.graphiqueRegion);  // Région
             AffichageGraph5(data.graphique5);  // Zone urbaine/rurale
+            AffichageGraph6(data.graphiqueLieuSoutien);  // Soutien
         })
         .catch(error => console.error("Erreur :", error));
 }
@@ -29,23 +30,32 @@ function AffichageGraph1(data) {
         .append("g")
         .attr("transform", `translate(${margin.left},${margin.top})`);
 
-    const totalCount = d3.sum(data, d => parseInt(d.count));
-
-    data.forEach(d => {
-        d.percentage = (parseInt(d.count) / totalCount) * 100;
+    const ageGroups = d3.group(data, d => {
+        const age = parseInt(d.reponse);
+        const start = Math.floor((age - 18) / 10) * 10 + 18;
+        const end = start + 9;
+        return `${start}-${end}`;
     });
 
+    const totalCount = d3.sum(Array.from(ageGroups.values()), group => group.length);
+
+    const ageGroupData = Array.from(ageGroups, ([key, values]) => ({
+        reponse: key,
+        count: values.length,
+        percentage: (values.length / totalCount) * 100
+    }));
+
     const xScale = d3.scaleBand()
-        .domain(data.map(d => d.reponse))
+        .domain(ageGroupData.map(d => d.reponse))
         .range([0, innerWidth])
         .padding(0.2);
 
     const yScale = d3.scaleLinear()
-        .domain([0, d3.max(data, d => d.percentage)])
+        .domain([0, d3.max(ageGroupData, d => d.percentage)])
         .range([innerHeight, 0]);
 
     svg.selectAll(".bar")
-        .data(data)
+        .data(ageGroupData)
         .enter()
         .append("rect")
         .attr("class", "bar")
@@ -56,7 +66,7 @@ function AffichageGraph1(data) {
         .style("fill", "var(--secondary)");
 
     svg.selectAll(".bar-text")
-        .data(data)
+        .data(ageGroupData)
         .enter()
         .append("text")
         .attr("class", "bar-text")
@@ -69,7 +79,7 @@ function AffichageGraph1(data) {
 
     svg.append("g")
         .attr("transform", `translate(0,${innerHeight})`)
-        .call(d3.axisBottom(xScale).tickFormat(d => `${d} ans`))
+        .call(d3.axisBottom(xScale))
         .selectAll("text")
         .style("text-anchor", "middle")
         .style("fill", "var(--secondary)")
@@ -78,6 +88,7 @@ function AffichageGraph1(data) {
     d3.select("#graphique1").append("div")
         .attr("class", "graph-title")
 }
+
 
 
 function AffichageGraph2(data) {
@@ -143,7 +154,7 @@ function AffichageGraph3(data) {
         .domain([0, d3.max(data, d => parseInt(d.count))])
         .range([innerHeight, 0]);
 
-    svg.selectAll(".bar")
+    const bars = svg.selectAll(".bar")
         .data(data)
         .enter()
         .append("rect")
@@ -160,23 +171,40 @@ function AffichageGraph3(data) {
         .append("text")
         .attr("class", "bar-text")
         .attr("x", d => xScale(d.reponse) + xScale.bandwidth() / 2)
-        .attr("y", d => yScale(parseInt(d.count)) - 5)
+        .attr("y", d => innerHeight + 15)
         .attr("text-anchor", "middle")
+        .style("opacity", 0)
         .style("fill", "var(--secondary)")
         .style("font-size", "12px")
-        .text(d => d.count);
+        .text(d => d.reponse);
+
+    bars.on("mouseover", function(event, d) {
+        d3.select(this).style("fill", "#ff0000");
+
+        svg.selectAll(".bar-text")
+            .filter((data) => data.reponse === d.reponse)
+            .style("opacity", 1);
+    })
+        .on("mouseout", function(event, d) {
+            d3.select(this).style("fill", "var(--secondary)");
+
+            svg.selectAll(".bar-text")
+                .filter((data) => data.reponse === d.reponse)
+                .style("opacity", 0);
+        });
 
     svg.append("g")
-        .attr("transform", `translate(0,${innerHeight})`)
-        .call(d3.axisBottom(xScale).tickFormat(d => `${d}`))
+        .call(d3.axisLeft(yScale))
         .selectAll("text")
         .style("text-anchor", "middle")
         .style("fill", "var(--secondary)")
         .style("font-size", "12px");
 
     d3.select("#graphique3").append("div")
-        .attr("class", "graph-title")
+        .attr("class", "graph-title");
 }
+
+
 
 function AffichageGraph4(data, region) {
     const width = 500, height = 400;
@@ -273,44 +301,3 @@ function AffichageGraph4(data, region) {
         .attr("class", "graph-title")
 }
 
-function AffichageGraph5(data) {
-    const width = 500, height = 400, radius = Math.min(width, height) / 2;
-
-    const svg = d3.select("#graphique5").append("svg")
-        .attr("width", width)
-        .attr("height", height)
-        .append("g")
-        .attr("transform", `translate(${width / 2},${height / 2})`);
-
-    const pie = d3.pie()
-        .value(d => parseInt(d.count));
-
-    const arc = d3.arc()
-        .innerRadius(0)
-        .outerRadius(radius);
-
-    const color = d3.scaleOrdinal(d3.schemeCategory10);
-
-    const pieData = pie(data);
-
-    svg.selectAll("path")
-        .data(pieData)
-        .enter()
-        .append("path")
-        .attr("d", arc)
-        .attr("fill", d => color(d.data.reponse))
-        .attr("stroke", "white")
-        .style("stroke-width", "2px");
-
-    svg.selectAll("text")
-        .data(pieData)
-        .enter()
-        .append("text")
-        .attr("transform", d => `translate(${arc.centroid(d)})`)
-        .style("text-anchor", "middle")
-        .style("font-size", "12px")
-        .text(d => d.data.reponse + " : " + d.data.count);
-
-    d3.select("#graphique5").append("div")
-        .attr("class", "graph-title")
-}
