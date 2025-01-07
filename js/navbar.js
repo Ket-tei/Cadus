@@ -83,10 +83,8 @@ function injectMobileNavbar() {
     const actualPath = window.location.pathname.split('/').pop().split('.')[0];
 
     // Définit l'id de la page actuelle
-    let id1 = "", id2 = "", id3 = "", id4 = "";
+    let id1 = "", id2 = "", id3 = "", id4 = "", id5 = "", id6 = "", id7 = "";
     switch (actualPath) {
-        case "contact":
-            break;
         case "quisommenous":
             id2 = id;
             break;
@@ -96,6 +94,15 @@ function injectMobileNavbar() {
         case "aide":
             id4 = id;
             break;
+        case "contact":
+            id5 = id;
+            break;
+        case "signup":
+            id6 = id;
+            break;
+        case "signin":
+            id7 = id;
+            break;
         default:
             id1 = id;
             break;
@@ -103,6 +110,7 @@ function injectMobileNavbar() {
 
     const navbarHTML = `
     <header>
+    
         <div class="off-screen-menu">
             <ul>
                 <li ${id1}>
@@ -117,6 +125,15 @@ function injectMobileNavbar() {
                 <li ${id4}>
                     <a href="../html/aide.html">Nous aider</a>
                 </li>
+                <li ${id5}>
+                    <a href="../html/contact.html">Contacter</a>
+                </li>
+                <li ${id6}>
+                    <a href="../html/signup.html">S'inscrire</a>
+                </li>
+                <li ${id7}>
+                    <a href="../html/signin.html">Se connecter</a>
+                </li>
             </ul>
         </div>
         <nav>
@@ -129,15 +146,6 @@ function injectMobileNavbar() {
             <ul class="menu">
                 <a href="../index.html"><img src="../assets/Logo_Cadus_Mobile.svg" alt="logo du site" /></a>
             </ul>
-
-            <ul class="contact-button">
-                <li>
-                    <a href="../html/contact.html">
-                        <img src="../assets/arrow-circle.png" alt="arrow image">
-                        <p>Contacter</p>
-                    </a>
-                </li>
-            </ul>
         </nav>
     </header>
     `;
@@ -147,7 +155,7 @@ function injectMobileNavbar() {
 
 
 
-if (window.innerWidth > 800) {
+if (window.innerWidth > 1450) {
     // Inject la navbar dans le body
     injectDesktopNavbar();
   }
