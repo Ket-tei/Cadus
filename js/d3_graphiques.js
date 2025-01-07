@@ -13,7 +13,6 @@ function recupDonneephp() {
             AffichageGraph3(data.graphique3);  // Lieu de vie
             AffichageGraph4(data.graphique4, data.graphiqueRegion);  // Région
             AffichageGraph5(data.graphique5);  // Zone urbaine/rurale
-            AffichageGraph6(data.graphiqueLieuSoutien);  // Soutien
         })
         .catch(error => console.error("Erreur :", error));
 }
