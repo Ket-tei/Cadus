@@ -301,3 +301,44 @@ function AffichageGraph4(data, region) {
         .attr("class", "graph-title")
 }
 
+function AffichageGraph5(data) {
+    const width = 500, height = 400, radius = Math.min(width, height) / 2;
+
+    const svg = d3.select("#graphique5").append("svg")
+        .attr("width", width)
+        .attr("height", height)
+        .append("g")
+        .attr("transform", `translate(${width / 2},${height / 2})`);
+
+    const pie = d3.pie()
+        .value(d => parseInt(d.count));
+
+    const arc = d3.arc()
+        .innerRadius(0)
+        .outerRadius(radius);
+
+    const color = d3.scaleOrdinal(d3.schemeCategory10);
+
+    const pieData = pie(data);
+
+    svg.selectAll("path")
+        .data(pieData)
+        .enter()
+        .append("path")
+        .attr("d", arc)
+        .attr("fill", d => color(d.data.reponse))
+        .attr("stroke", "white")
+        .style("stroke-width", "2px");
+
+    svg.selectAll("text")
+        .data(pieData)
+        .enter()
+        .append("text")
+        .attr("transform", d => `translate(${arc.centroid(d)})`)
+        .style("text-anchor", "middle")
+        .style("font-size", "12px")
+        .text(d => d.data.reponse + " : " + d.data.count);
+
+    d3.select("#graphique5").append("div")
+        .attr("class", "graph-title")
+}
