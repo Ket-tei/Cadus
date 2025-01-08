@@ -14,14 +14,13 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap:1.7em;
+    gap:1.3em;
 }
 .graphiqueLieuVie {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap:1.7em;
 }
 h1 {
     text-align: center;
@@ -42,7 +41,7 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50%; /* Ajustez selon vos besoins */
+    width: 50%;
 }
 
 .graphiqueTitre {
@@ -56,7 +55,7 @@ h2 {
     top: 5em;
     left: 1em;
     display: block;
-    margin: 0 auto;
+    margin-top: -10em;
     background-color: red;
     color: white;
     border-radius: 0.5em;
@@ -74,13 +73,64 @@ h2 {
     }
 
 }
-@media (max-width: 768px) {
-    .graphiquePersonnes, .graphiqueLieuVie {
-        flex-direction: column;
-        align-items: stretch;
+#messages-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1em;
+    margin-top: 2em;
+}
+.messages {
+    display: flex;
+    justify-content: center;
+    color : var(--secondary);
+    align-items: center;
+    flex-direction: column;
+    padding: 1em;
+    gap: 1em;
+    margin-top: 2em;
+    font-size: 1em;
+}
+.message-item {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 1em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+
+
+@media (max-width: 800px) {
+    .zoneGraphique {
+        margin-top: 5em;
     }
 
-    .graphique {
-        width: 90%;
-    }}
+    h1 {
+        font-size: 1.5em;
+        margin-top: 2em;
+    }
+
+    .graphiquePersonnes, .graphiqueLieuVie {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+
+    }
+
+    .boutonDeconnexion {
+        align-items: center;
+        position: absolute;
+        justify-content: center;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .zoneGraphique {
+
+    }
+}
 

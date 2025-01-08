@@ -31,8 +31,8 @@ INSERT INTO questions (texte, type_de_reponse) VALUES
     ('Quel est votre activité ?', 'choix'),
     ('Pratiquez-vous un loisir/sport ?', 'choix'),
     ('Avez-vous des problèmes de santé', 'choix'),
-    ('Êtes-vous satisfait de votre vie ?', 'choix'),
-    ('Avez-vous besoin de soutien psychologique ?', 'choix'),
+    ('Seriez-vous enclin de faire un examen de santé ?', 'choix'),
+    ('Avez-vous subit une intervention chirurgiale ?', 'choix'),
     ('Avez-vous besoin d aide financière', 'choix');
 
 
@@ -84,6 +84,7 @@ INSERT INTO choix (id_question, texte) VALUES
     (7, 'Non'),
     (8, 'Oui'),
     (8, 'Non'),
+    (8, 'Je ne souhaite pas répondre'),
     (9, 'Oui'),
     (9, 'Non'),
     (9, 'Je ne souhaite pas répondre'),
@@ -108,3 +109,13 @@ CREATE TABLE IF NOT EXISTS reponses (
     FOREIGN KEY (id_question) REFERENCES questions(id),
     FOREIGN KEY (id_sessions) REFERENCES sessions(id)
 );
+-- message depuis la page contact
+CREATE TABLE contacts (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nom TEXT NOT NULL,
+    prenom TEXT NOT NULL,
+    email TEXT NOT NULL,
+    message TEXT NOT NULL,
+    date_submission DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+

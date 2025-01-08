@@ -47,15 +47,20 @@
     </div>
 
   </div>
+    <section class="messages">
+      <h2>Messages des utilisateurs</h2>
+      <div id="messages-container"></div>
+    </section>
+    <div class="deconnexion">
+      <form method="POST" action="../php/app/logout.php">
+        <button type="submit" class="boutonDeconnexion">Se déconnecter</button>
+      </form>
+    </div>
 
 
 </div>
 
-  <div class="deconnexion">
-    <form method="POST" action="../php/app/logout.php">
-      <button type="submit" class="boutonDeconnexion">Se déconnecter</button>
-    </form>
-  </div>
+  <script src="../js/GetMessage.js"></script>
   <script src="../js/d3_graphiques.js"></script>
 </main>
 

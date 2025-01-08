@@ -73,4 +73,13 @@ input[type="password"]:focus {
     }
 
 }
+@media (max-width: 800px) {
+    .form-login {
+        padding: 1em;
+    }
+    h1 {
+        margin-top: 2em;
+        font-size: 2em;
+    }
+}
 
