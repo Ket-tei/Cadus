@@ -11,7 +11,7 @@ if (window.innerWidth > 800) {
   runBentoAnimations();
 }
 else {
-  runSentenceAnimations("start start");
+  runSentenceAnimations("+=45%");
 }
 
 

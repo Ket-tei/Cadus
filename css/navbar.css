@@ -116,7 +116,7 @@ header {
 }
 
 
-@media (max-width: 1450px) {
+@media (max-width: 800px) {
   /* Main Menu */
   header {
     height: 5vh;

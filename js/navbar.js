@@ -155,7 +155,7 @@ function injectMobileNavbar() {
 
 
 
-if (window.innerWidth > 1450) {
+if (window.innerWidth > 800) {
     // Inject la navbar dans le body
     injectDesktopNavbar();
   }
